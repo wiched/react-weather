@@ -6,12 +6,26 @@ let WeatherUnits = React.createClass({
             celsius: true
         }
     },
-
+    handleClick: function () {
+        this.setState({
+            celsius: !this.state.celsius
+        });
+    },
     render: function () {
+        let {celsius} = this.state;
+
+        let units = true;
+        if(this.state.celsius) {
+            units = '°C';
+            test = 'metric'
+        } else {
+            units = '°F';
+            test = 'imperial'
+        }
         return (
                 <li>
-                    <button className="button hollow celsius">°C</button>
-                    <button className="button hollow">°F</button>
+                    <button onClick={this.handleClick} className="button hollow ">{units}</button>
+                    <p>{}</p>
                 </li>
         );
     }
