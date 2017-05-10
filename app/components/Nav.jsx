@@ -1,5 +1,6 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
+var WeatherUnits = require('WeatherUnits');
 
 var Nav = React.createClass({
   onSearch: function (e) {
@@ -38,6 +39,7 @@ var Nav = React.createClass({
               <li>
                 <input type="submit" className="button" value="Get Weather"/>
               </li>
+                <WeatherUnits/>
             </ul>
           </form>
         </div>
