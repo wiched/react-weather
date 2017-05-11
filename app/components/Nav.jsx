@@ -1,6 +1,6 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
-var WeatherUnits = require('WeatherUnits');
+
 
 var Nav = React.createClass({
   onSearch: function (e) {
