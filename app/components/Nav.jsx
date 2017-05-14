@@ -40,7 +40,7 @@ var Nav = React.createClass({
               <li>
                 <input type="submit" className="button" value="Get Weather"/>
               </li>
-                <WeatherUnits units={console.log(this.props.units)}/>
+                <WeatherUnits units={console.log(this.props.units)} callback={this.onChangeUnits} />
             </ul>
           </form>
         </div>

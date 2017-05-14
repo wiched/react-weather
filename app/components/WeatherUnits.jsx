@@ -21,6 +21,7 @@ var WeatherUnits = React.createClass({
        this.setState({
            units: 'imperial'
        });
+        this.props.callback(this.state.units);
         console.log(this.state.units);
     },
 
@@ -28,6 +29,7 @@ var WeatherUnits = React.createClass({
         this.setState({
             units: 'metric'
         });
+        this.props.callback(this.state.units);
         console.log(this.state.units);
     },
     render: function () {

@@ -12,7 +12,9 @@ var Weather = React.createClass({
       units: 'metric'
     }
   },
+    onChangeUnits(units) {
 
+    },
   handleSearch: function (location) {
     var that = this;
 
