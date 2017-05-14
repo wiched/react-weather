@@ -3,14 +3,16 @@ var WeatherForm = require('WeatherForm');
 var WeatherMessage = require('WeatherMessage');
 var ErrorModal = require('ErrorModal');
 var openWeatherMap = require('openWeatherMap');
-
+var WeatherUnits = require('WeatherUnits');
 
 var Weather = React.createClass({
   getInitialState: function () {
     return {
-      isLoading: false
+      isLoading: false,
+      units: 'metric'
     }
   },
+
   handleSearch: function (location) {
     var that = this;
 
@@ -20,6 +22,7 @@ var Weather = React.createClass({
       location: undefined,
       temp: undefined
     });
+
 
     openWeatherMap.getTemp(location).then(function (temp) {
       that.setState({

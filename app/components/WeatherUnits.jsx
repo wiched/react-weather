@@ -1,32 +1,42 @@
-let React = require('react');
+var React = require('react');
 
-let WeatherUnits = React.createClass({
+var WeatherUnits = React.createClass({
+    // onFormSubmit: function (e) {
+    //     e.preventDefault();
+    //
+    //     var location = this.refs.location.value;
+    //
+    //     if (location.length > 0) {
+    //         this.refs.location.value = '';
+    //         this.props.onSearch(location);
+    //     }
+    // },
     getInitialState: function () {
         return {
-            celsius: true
+            units: 'metric'
         }
     },
-    handleClick: function () {
+
+    onClickUnitsF() {
+       this.setState({
+           units: 'imperial'
+       });
+        console.log(this.state.units);
+    },
+
+    onClickUnitsC() {
         this.setState({
-            celsius: !this.state.celsius
+            units: 'metric'
         });
+        console.log(this.state.units);
     },
     render: function () {
-        let {celsius} = this.state;
 
-        let units = true;
-        if(this.state.celsius) {
-            units = '°C';
-            test = 'metric'
-        } else {
-            units = '°F';
-            test = 'imperial'
-        }
         return (
-                <li>
-                    <button onClick={this.handleClick} className="button hollow ">{units}</button>
-                    <p>{}</p>
-                </li>
+            <li>
+        <button className="hollow button" onClick={this.onClickUnitsC}>C</button>
+        <button className="hollow button" onClick={this.onClickUnitsF}>{this.state.units}</button>
+            </li>
         );
     }
 });

@@ -1,5 +1,6 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
+var WeatherUnits = require('WeatherUnits');
 
 
 var Nav = React.createClass({
@@ -39,7 +40,7 @@ var Nav = React.createClass({
               <li>
                 <input type="submit" className="button" value="Get Weather"/>
               </li>
-
+                <WeatherUnits units={console.log(this.props.units)}/>
             </ul>
           </form>
         </div>
